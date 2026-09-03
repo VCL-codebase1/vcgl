@@ -102,7 +102,8 @@ export default function Home() {
         <div className="section-label light-label"><span>03</span><span>Core values</span></div>
         <div className="values-heading"><h2>The standard<br /><em>we share.</em></h2><p>Our values shape how we think, work, and build relationships across every part of the group.</p></div>
         <div className="values-grid">
-          <article className="value-card value-feature"><span>01</span><h3>Professionalism</h3><p>We uphold the highest standards of professionalism in all our interactions, operations, and deliverables, with integrity, accountability, and respect.</p></article>
+          <article className="value-card value-image"><img src="/power-vcgl.PNG" alt="Power" /></article>
+          <article className="value-card"><span>01</span><h3>Professionalism</h3><p>We uphold the highest standards of professionalism in all our interactions, operations, and deliverables, with integrity, accountability, and respect.</p></article>
           <article className="value-card"><span>02</span><h3>Originality</h3><p>Fresh thinking and creativity are the foundation of our innovation and competitive advantage.</p></article>
           <article className="value-card"><span>03</span><h3>World-class</h3><p>We are committed to world-class standards in our products, solutions, and customer experience.</p></article>
           <article className="value-card"><span>04</span><h3>Excellence</h3><p>We pursue the highest standards of quality and performance in every project.</p></article>
