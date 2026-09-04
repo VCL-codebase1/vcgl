@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "technology",
   ],
   authors: [{ name: "Vethan Concepts Group Limited" }],
+  icons: {
+    icon: "/fav icon.jpg",
+    apple: "/fav icon.jpg",
+  },
   metadataBase: new URL("https://vcgl.ng"),
   alternates: {
     canonical: "https://vcgl.ng",
