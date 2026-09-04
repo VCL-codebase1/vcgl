@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Target, Sparkles, Phone, ArrowUp } from "lucide-react";
 
@@ -40,9 +40,33 @@ const team = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const rootRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const targets = root.querySelectorAll<HTMLElement>(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach((el) => el.classList.add("reveal-in"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    targets.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <main>
+    <main ref={rootRef}>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="VCGL home">
           <Image className="brand-logo" src="/vcgl logo.jpg" alt="VCGL - Vethan Concepts Group Ltd" width={190} height={70} priority />
@@ -58,10 +82,10 @@ export default function Home() {
         </button>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero reveal reveal-in" id="top">
         <div className="hero-image" />
         <div className="hero-overlay" />
-        <div className="hero-content">
+        <div className="hero-content reveal reveal-delay-1">
           <p className="eyebrow light">Vethan Concepts Group / Lagos, Nigeria</p>
           <h1>Innovation Across Industries.<br /><span>Excellence Without Limits</span></h1>
           <p className="hero-copy">Vethan Concepts Group Limited is a diversified conglomerate driving innovation across science, energy, automation, and event experiences in Nigeria and beyond.</p>
@@ -92,9 +116,9 @@ export default function Home() {
         </div>
         <div className="about-details-heading"><p className="eyebrow">What guides the group</p><h2>Purpose in every<br /><em>direction.</em></h2></div>
         <div className="principle-list">
-          <article className="principle-card"><span className="principle-icon icon-animate"><Target size={23} /></span><div><h3>Our Mission</h3><p>At Vethan Concepts Group Limited, our mission is to deliver innovative, sustainable, and high-impact solutions that drive value for our clients, empower communities, and shape industries. We are committed to excellence in every endeavor, providing cutting-edge solutions across our diversified portfolio.</p></div></article>
-          <article className="principle-card"><span className="principle-icon icon-animate"><ArrowUpRight size={23} /></span><div><h3>Our Vision</h3><p>To be a globally recognized, multi-sector powerhouse, renowned for transforming ideas into lasting legacies, leading with integrity, and creating inclusive growth across all markets we serve.</p></div></article>
-          <article className="principle-card"><span className="principle-icon icon-animate"><Sparkles size={23} /></span><div><h3>Our People / Our Culture</h3><p>Our people are the heartbeat of our success. We foster a culture of collaboration, creativity, and continuous growth, empowering talent and nurturing leadership at every level of the organization.</p></div></article>
+          <article className="principle-card reveal"><span className="principle-icon icon-animate"><Target size={23} /></span><div><h3>Our Mission</h3><p>At Vethan Concepts Group Limited, our mission is to deliver innovative, sustainable, and high-impact solutions that drive value for our clients, empower communities, and shape industries. We are committed to excellence in every endeavor, providing cutting-edge solutions across our diversified portfolio.</p></div></article>
+          <article className="principle-card reveal"><span className="principle-icon icon-animate"><ArrowUpRight size={23} /></span><div><h3>Our Vision</h3><p>To be a globally recognized, multi-sector powerhouse, renowned for transforming ideas into lasting legacies, leading with integrity, and creating inclusive growth across all markets we serve.</p></div></article>
+          <article className="principle-card reveal"><span className="principle-icon icon-animate"><Sparkles size={23} /></span><div><h3>Our People / Our Culture</h3><p>Our people are the heartbeat of our success. We foster a culture of collaboration, creativity, and continuous growth, empowering talent and nurturing leadership at every level of the organization.</p></div></article>
         </div>
       </section>
 
@@ -103,18 +127,18 @@ export default function Home() {
         <div className="values-heading"><h2>The standard<br /><em>we share.</em></h2><p>Our values shape how we think, work, and build relationships across every part of the group.</p></div>
         <div className="values-grid">
           <article className="value-card value-image"><img src="/power-vcgl.PNG" alt="Power" /></article>
-          <article className="value-card"><span>01</span><h3>Professionalism</h3><p>We uphold the highest standards of professionalism in all our interactions, operations, and deliverables, with integrity, accountability, and respect.</p></article>
-          <article className="value-card"><span>02</span><h3>Originality</h3><p>Fresh thinking and creativity are the foundation of our innovation and competitive advantage.</p></article>
-          <article className="value-card"><span>03</span><h3>World-class</h3><p>We are committed to world-class standards in our products, solutions, and customer experience.</p></article>
-          <article className="value-card"><span>04</span><h3>Excellence</h3><p>We pursue the highest standards of quality and performance in every project.</p></article>
-          <article className="value-card"><span>05</span><h3>Relationship</h3><p>Trust, transparency, and mutual respect are the cornerstone of sustainable success.</p></article>
+          <article className="value-card reveal"><span>01</span><h3>Professionalism</h3><p>We uphold the highest standards of professionalism in all our interactions, operations, and deliverables, with integrity, accountability, and respect.</p></article>
+          <article className="value-card reveal"><span>02</span><h3>Originality</h3><p>Fresh thinking and creativity are the foundation of our innovation and competitive advantage.</p></article>
+          <article className="value-card reveal"><span>03</span><h3>World-class</h3><p>We are committed to world-class standards in our products, solutions, and customer experience.</p></article>
+          <article className="value-card reveal"><span>04</span><h3>Excellence</h3><p>We pursue the highest standards of quality and performance in every project.</p></article>
+          <article className="value-card reveal"><span>05</span><h3>Relationship</h3><p>Trust, transparency, and mutual respect are the cornerstone of sustainable success.</p></article>
         </div>
       </section>
 
       <section className="sectors section-pad" id="sectors">
         <div className="section-label light-label"><span>04</span><span>Subsidiaries</span></div>
         <div className="sectors-heading"><h2>Network of innovative<br /><em>subsidiaries.</em></h2><p>Our businesses operate independently, connected by a shared commitment to quality, innovation, and customer satisfaction.</p></div>
-        <div className="subsidiary-carousel" aria-label="VCGL subsidiaries">
+        <div className="subsidiary-carousel reveal" aria-label="VCGL subsidiaries">
           <div className="subsidiary-track">
             {[...subsidiaries, ...subsidiaries].map(([title, description, logo, image, website], index) => <a className="subsidiary-card" href={website} key={`${title}-${index}`} target="_blank" rel="noopener noreferrer">
               <div className="subsidiary-photo" style={{ backgroundImage: `url(${image})` }}><div className="subsidiary-photo-shade" /><div className="subsidiary-logo"><Image src={logo} alt={`${title} logo`} fill sizes="148px" /></div></div>
@@ -126,7 +150,7 @@ export default function Home() {
 
       <section className="brands">
         <h2 className="brands-heading">VCGL Brands</h2>
-        <div className="brand-carousel" aria-label="VCGL brands">
+        <div className="brand-carousel reveal" aria-label="VCGL brands">
           <div className="brand-track">
             {[...brands, ...brands].map((logo, index) => (
               <div className="brand-logo" key={`brand-${index}`}>
@@ -141,7 +165,7 @@ export default function Home() {
         <div className="section-label"><span>05</span><span>Meet our team</span></div>
         <div className="team-heading"><h2>The people<br /><em>behind the work.</em></h2><p>Our people are the heartbeat of our success: curious, capable, and committed to making a difference.</p></div>
         <div className="team-grid">
-          {team.map(([name, role, image]) => <article className="team-card" key={name}>
+          {team.map(([name, role, image], i) => <article className={`team-card reveal reveal-delay-${i % 4}`} key={name}>
             <div className="team-photo" style={{ backgroundImage: `url(${image})` }} />
             <div className="team-card-body"><h3>{name}</h3><p>{role}</p></div>
           </article>)}
@@ -150,7 +174,7 @@ export default function Home() {
 
       <section className="contact section-pad" id="contact">
         <div className="section-label"><span>06</span><span>Let&apos;s connect</span></div>
-        <div className="contact-panel">
+        <div className="contact-panel reveal">
           <div className="contact-heading">
             <p className="eyebrow">A good conversation starts here</p>
             <h2>&quot;Innovation across industries.<br /><em>Excellence without limits.</em>&quot;</h2>
