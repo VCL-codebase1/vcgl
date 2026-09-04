@@ -116,7 +116,7 @@ h2 { font-size: clamp(48px, 6vw, 90px); font-weight: 500; }
 .team-grid .team-card:nth-child(2) { grid-column: 4 / span 2; }
 .team-card { background: #fff; box-shadow: 0 8px 20px rgba(23, 53, 127, .08); transition: box-shadow .25s, transform .25s; }
 .team-card:hover { box-shadow: 0 18px 30px rgba(23, 53, 127, .2); transform: translateY(-7px); }
-.team-photo { background-position: center top; background-size: cover; height: 320px; position: relative; }
+.team-photo { background-position: center; background-repeat: no-repeat; background-size: contain; height: 320px; position: relative; }
 .team-photo:after { background: linear-gradient(180deg, transparent 55%, rgba(8, 28, 75, .35)); content: ''; inset: 0; position: absolute; }
 .team-card-body { border-top: 3px solid var(--lime); padding: 17px 15px 19px; }
 .team-card-body h3 { color: var(--ink); font-family: 'Space Grotesk'; font-size: 18px; letter-spacing: -.04em; margin: 0 0 7px; }
