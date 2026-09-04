@@ -15,13 +15,13 @@ const subsidiaries = [
 ];
 
 const brands = [
-  "/Brands/a-matrix.jpg",
-  "/Brands/anywork365.jpg",
-  "/Brands/asset matrix reliability.JPG",
-  "/Brands/cerene.PNG",
-  "/Brands/RRA.webp",
-  "/Brands/Scientifrika.webp",
-  "/Brands/V-One1.png",
+  ["/Brands/a-matrix.jpg", "https://a-matrix.ng/"],
+  ["/Brands/anywork365.jpg", "https://anywork365.ng/"],
+  ["/Brands/asset matrix reliability.JPG", "https://training.assetmatrixenergy.com/"],
+  ["/Brands/cerene.PNG", "#"],
+  ["/Brands/RRA.webp", "https://reliabilityafrica.com/"],
+  ["/Brands/Scientifrika.webp", "https://scientifrika.com/"],
+  ["/Brands/V-One1.png", "https://v-one1.vercel.app/"],
 ];
 
 const team = [
@@ -152,10 +152,10 @@ export default function Home() {
         <h2 className="brands-heading">VCGL Brands</h2>
         <div className="brand-carousel reveal" aria-label="VCGL brands">
           <div className="brand-track">
-            {[...brands, ...brands].map((logo, index) => (
-              <div className="brand-logo" key={`brand-${index}`}>
+            {[...brands, ...brands].map(([logo, url], index) => (
+              <a className="brand-logo" href={url} key={`brand-${index}`} target="_blank" rel="noopener noreferrer">
                 <Image src={logo} alt="Brand logo" fill sizes="120px" />
-              </div>
+              </a>
             ))}
           </div>
         </div>
