@@ -9,7 +9,7 @@ const subsidiaries = [
   ["Asset Matrix Energy Ltd", "Industrial Engineering Solutions", "/logos/asset-matrix-energy.png", "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=85", "https://assetmatrixenergy.com"],
   ["Vethan Concepts Ltd", "Conference & Exhibition event Management, Co-workspace facility.", "/logos/vethanconcepts.png", "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=85", "https://vethanconcepts.com"],
   ["Asset Matrix Automation Ltd", "Renewable, Automation, Robotics Engineering Solutions.", "/logos/asset-matrix-automation.png", "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=85", "https://assetmatrixautomation.com/"],
-  ["Etcon Labs", "Laboratory Services", "/logos/etcon-labs.webp", "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85", "https://lab.etconanalytical.com/"],
+  ["Etcon Labs", " Scientific Laboratory Services", "/logos/etcon-labs.webp", "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85", "https://lab.etconanalytical.com/"],
   ["Perfect Events Retail & Consumer", "Event & Party Props, Retail & Wholesale .", "/logos/perfect-events.jpeg", "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85", "https://perfecteventsng.com/"],
   ["VethanCon", "Software as a Service (SaaS), App Development (Mobile & Web), FinTech solutions.", "/logos/vethancon.png", "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85", "#"],
 ];
