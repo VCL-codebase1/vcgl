@@ -25,17 +25,18 @@ const brands = [
 ];
 
 const team = [
-  ["Osasogie Osazuwa", "Group Managing Director", "/team/Osasogie%20Osazuwa.jpeg"],
+  ["Osasogie Osazuwa", "Group Managing Director / CEO", "/team/Osasogie%20Osazuwa.jpeg"],
   ["Patricia Osazuwa", "Group Executive Director", "/team/Patricia%20Osazuwa.jpeg"],
   ["Deborah Samuel", "Group Head, Legal, HR & Admin", "/team/Deborah%20Samuel.jpeg"],
-  ["Chima Chinonso", "Group Head IT / Digital Products Manager", "/team/Chima%20Chinonso.jpeg"],
+  ["Chinonso Chima ", "Group Head IT / Digital Products Manager", "/team/Chima%20Chinonso.jpeg"],
   ["Usman Adeniji", "Group Head, Accounts, Finance & Procurement", "/team/Usman%20Adeniji.jpeg"],
   ["Sulaimon Dauda", "Group Head, Operations & Logistics", "/team/Sulaimon%20Dauda.jpeg"],
   ["Regina Imevbore", "Group Head, Creative Marketing & Customer Services", "/team/Regina%20Imevbore.PNG"],
   ["Funmilayo Omoarukhe", "Manager, Events & Exhibition Services", "/team/Funmilayo%20Omoarukhe.jpeg"],
   ["Chinedu Temple", "Group Head, Sales & Business Development", "/team/Chinedu%20Temple.jpeg"],
   ["Michael Adeoye", "Group Head, Technical Sales and Services (Engineering and Scientific Solutions)", "/team/Michael%20Adeoye.jpeg"],
-  ["Amosu Deborah", "Manager, Scientific & Laboratory Products", "/team/Amosu%20Deborah.jpeg"],
+  ["Deborah  Amosu", "Manager, Scientific & Laboratory Products", "/team/Amosu%20Deborah.jpeg"],
+  ["Michael Johnson", "Lead Software Engineer / Head R&D", "/team/Michael%20Johnson.png"],
 ];
 
 export default function Home() {
