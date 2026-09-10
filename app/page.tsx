@@ -27,6 +27,7 @@ const brands = [
 const team = [
   ["Osasogie Osazuwa", "Group Managing Director / CEO", "/team/Osasogie%20Osazuwa.jpeg"],
   ["Patricia Osazuwa", "Group Executive Director", "/team/Patricia%20Osazuwa.jpeg"],
+  ["Osaretin Osazuwa", "Director, Business Operations & Strategy", "/team/Osaretin%20Osazuwa.jpeg"],
   ["Deborah Samuel", "Group Head, Legal, HR & Admin", "/team/Deborah%20Samuel.jpeg"],
   ["Chinonso Chima ", "Group Head IT / Digital Products Manager", "/team/Chima%20Chinonso.jpeg"],
   ["Usman Adeniji", "Group Head, Accounts, Finance & Procurement", "/team/Usman%20Adeniji.jpeg"],
